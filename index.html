@@ -2,31 +2,61 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kopi Saji - Website UMKM</title>
-    <link rel ="stylesheet" href="css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Saji - Teman Nyantai & Nongkrong</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    <main class = "page">
-        <section class = "hero">
-            <p class = "eyebrow">UMKM Batang</p>
+
+    <main class="page">
+        <section class="hero">
+            <span class="eyebrow">Batang Coffee Heritage</span>
             <h1>Kopi Saji</h1>
-            <p>Kopi Lokal Pilihan Untuk Teman Belajar, Bekerja, Dan Berdiskusi.</p>
-            <button id="promoButton" type= "button">Lihat Promo Hari Ini</button>
+            <p class="hero-desc">Seduhan lokal pilihan buat nemenin kamu nugas, kerja, atau sekadar lepas penat bareng temen.</p>
+            <button id="promoButton" type="button">Cek Promo Hari Ini !!!</button>
         </section>
 
-        <section aria_labelledby="produk-tittle">
-            <h2 id="produk_tittle">Produk Unggulan</h2>
-            <ul class="products">
-                <li>Kopi Saji Signature - Rp20.000</li>
-                <li>Cold Brew Aren - Rp20.000</li>
-                <li>Americano Peach - Rp22.000</li>
-                <li>Americano Blackcurrant - Rp22.000</li>
-                <li>V60 - Rp22.000</li>
-                <li>Kopi Aren Latte - Rp24.000</li>
-            </ul>
+        <section class="section" aria-labelledby="produk-title">
+            <h2 id="produk-title">Menu Favorit</h2>
+            
+            <div class="products">
+                <article class="product-box">
+                    <img src="kopi_signature.webp" alt="Kopi Saji Signature" class="product-img">
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Kopi Saji Signature</h3>
+                            <span class="price">Rp20k</span>
+                        </div>
+                        <p>Blend robusta-arabika khas Batang. Karakter bold dengan hint cokelat & karamel yang nyantol di lidah.</p>
+                    </div>
+                </article>
+
+                <article class="product-box">
+                    
+                    <img src="cold_brew_aren.webp" alt="Cold Brew Aren" class="product-img">
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Cold Brew Aren</h3>
+                            <span class="price">Rp20k</span>
+                        </div>
+                        <p>Diseduh dingin 12 jam, dipadukan manis alaminya gula aren Wonotunggal. Creamy & pas buat nemenin nugas malam.</p>
+                    </div>
+                </article>
+
+                <article class="product-box">
+                    <img src="peach_coffee.webp" alt="Americano Peach" class="product-img">
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3>Americano Peach</h3>
+                            <span class="price">Rp22k</span>
+                        </div>
+                        <p>Double shot espresso ketemu sentuhan manis-segar buah peach. Cocok buat yang mau caffeine boost tapi gak mau enek.</p>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
-    <script src ="js/script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
