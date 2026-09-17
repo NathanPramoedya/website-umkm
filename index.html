@@ -12,11 +12,16 @@
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
         <nav class="nav" aria-label="Navigasi utama">
-            <a class="brand" href="index.html">Kopi Saji</a>
-            <ul>
+            <a class="brand" href="index.html">
+                <img class="brand-mark" src="assets/images/logo_saji.webp" alt="logo kopi saji" width="34" height="34">
+                Kopi Saji
+            </a>
+            <ul class="nav-list">
                 <li><a class="active" aria-current="page" href="index.html">Beranda</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
-                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
             </ul>
         </nav>
     </header>
@@ -24,17 +29,22 @@
     <main id="konten" class="page">
         <!-- Hero Section -->
         <section class="hero">
-            <span class="eyebrow">Batang Coffee Heritage</span>
-            <h1>Kopi Saji</h1>
-            <p class="hero-desc">Seduhan lokal pilihan buat nemenin kamu nugas, kerja, atau sekadar lepas penat bareng temen.</p>
-            <div class="hero-action">
-                <button id="promoButton" type="button">Cek Promo Hari Ini !!!</button>
+            <div class="hero-copy">
+                <span class="eyebrow">Batang Coffee Heritage</span>
+                <h1>Kopi Saji</h1>
+                <p class="hero-desc">Seduhan lokal pilihan buat nemenin kamu nugas, kerja, atau sekadar lepas penat
+                    bareng temen.</p>
+                <div class="hero-action">
+                    <button id="promoButton" type="button" aria-pressed="false">Cek Promo Hari Ini !!!</button>
+                </div>
             </div>
-            <img src="assets/images/beans_bag.webp" alt="Biji Kopi Saji" class="hero-img" />
+            <img src="assets/images/tampak_depan_saji.webp" alt="Tampak depan kedai Kopi Saji" class="hero-img" />
         </section>
 
         <section id="kontak" class="section" aria-labelledby="kontak-title">
-            <h2 id="kontak-title">Lokasi & Jam Operasional</h2>
+            <div class="section-head">
+                <h2 id="kontak-title">Lokasi & Jam Operasional</h2>
+            </div>
             <div class="contact-card">
                 <div class="contact-item">
                     <strong>Alamat Kedai</strong>
@@ -46,47 +56,67 @@
                 </div>
                 <div class="contact-item">
                     <strong>Layanan Pelanggan</strong>
-                    <p>Hubungi via <a href="https://wa.me/6281584666845" target="_blank" rel="noopener noreferrer">WhatsApp Kopi Saji Batang</a></p>
+                    <p>Hubungi via <a href="https://wa.me/6281584666845" target="_blank"
+                            rel="noopener noreferrer">WhatsApp Kopi Saji Batang</a></p>
                 </div>
             </div>
         </section>
 
         <section class="section" aria-labelledby="produk-title">
-            <h2 id="produk-title">Menu Favorit</h2>
+            <div class="section-head">
+                <h2 id="produk-title">Menu Favorit</h2>
+                <p>Empat racikan andalan yang paling sering dipesan pelanggan setia kami.</p>
+            </div>
 
             <div class="products">
-                <article class="product-box">
-                    <img src="assets/images/kopi_signature.webp" alt="Kopi Saji Signature" class="product-img">
-                    <div class="product-content">
+                <figure class="product-card">
+                    <img src="assets/images/kopi_signature.webp" alt="Kopi Saji Signature disajikan dalam gelas"
+                        class="product-img">
+                    <figcaption>
                         <div class="product-header">
                             <h3>Kopi Saji Signature</h3>
                             <span class="price">Rp20k</span>
                         </div>
-                        <p>Blend robusta-arabika khas Batang. Karakter bold dengan hint cokelat & karamel yang nyantol di lidah.</p>
-                    </div>
-                </article>
+                        <p>Blend robusta-arabika khas Batang dengan hint cokelat & karamel.</p>
+                    </figcaption>
+                </figure>
 
-                <article class="product-box">
-                    <img src="assets/images/cold_brew_aren.webp" alt="Cold Brew Aren" class="product-img">
-                    <div class="product-content">
+                <figure class="product-card">
+                    <img src="assets/images/cold_brew_aren.webp" alt="Cold Brew Aren dengan es dalam gelas"
+                        class="product-img">
+                    <figcaption>
                         <div class="product-header">
                             <h3>Cold Brew Aren</h3>
                             <span class="price">Rp20k</span>
                         </div>
-                        <p>Diseduh dingin 12 jam, dipadukan manis alami gula aren lokal. Creamy & pas buat nemenin nugas malam.</p>
-                    </div>
-                </article>
+                        <p>Diseduh dingin 12 jam, dipadukan manis alami gula aren lokal.</p>
+                    </figcaption>
+                </figure>
 
-                <article class="product-box">
-                    <img src="assets/images/peach_coffee.webp" alt="Americano Peach" class="product-img">
-                    <div class="product-content">
+                <figure class="product-card">
+                    <img src="assets/images/peach_coffee.webp" alt="Americano Peach dengan potongan buah peach"
+                        class="product-img">
+                    <figcaption>
                         <div class="product-header">
                             <h3>Americano Peach</h3>
                             <span class="price">Rp22k</span>
                         </div>
-                        <p>Double shot espresso ketemu sentuhan manis-segar buah peach. Cocok buat yang mau caffeine boost tapi gak mau enek.</p>
-                    </div>
-                </article>
+                        <p>Double shot espresso dengan sentuhan manis-segar buah peach.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="product-card">
+                    <img src="assets/images/es_kopi_kelapa.webp"
+                        alt="Es Kopi Kelapa Muda dengan serutan kelapa di atasnya" class="product-img">
+                    <figcaption>
+                        <span class="new-badge">Menu Baru</span>
+                        <div class="product-header">
+                            <h3>Es Kopi Kelapa Muda</h3>
+                            <span class="price">Rp23k</span>
+                        </div>
+                        <p>Espresso bertemu santan kelapa muda asli dan es batu, ringan dan segar.</p>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 

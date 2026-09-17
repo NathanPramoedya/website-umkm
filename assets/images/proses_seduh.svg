@@ -1,0 +1,402 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 500"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">Proses Seduh Kopi Manual</title>
+  <desc id="desc">
+    Ilustrasi teko leher angsa menuangkan air panas ke dripper kopi
+    di atas server kaca.
+  </desc>
+
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf3"/>
+      <stop offset="1" stop-color="#f4e6d3"/>
+    </linearGradient>
+
+    <!-- Kettle -->
+    <linearGradient id="kettle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f4144"/>
+      <stop offset="0.5" stop-color="#17191b"/>
+      <stop offset="1" stop-color="#090a0b"/>
+    </linearGradient>
+
+    <!-- Glass -->
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".75"/>
+      <stop offset=".45" stop-color="#dce7e5" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".15"/>
+    </linearGradient>
+
+    <!-- Coffee -->
+    <linearGradient id="coffee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b3a21"/>
+      <stop offset=".45" stop-color="#3f1e12"/>
+      <stop offset="1" stop-color="#21100a"/>
+    </linearGradient>
+
+    <!-- Wood -->
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b87942"/>
+      <stop offset="1" stop-color="#75421f"/>
+    </linearGradient>
+
+    <!-- Soft shadow -->
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    <!-- Steam -->
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+
+  <!-- ================= BACKGROUND ================= -->
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- subtle café wall -->
+  <circle cx="95" cy="85" r="70" fill="#ead8c1" opacity=".25"/>
+  <circle cx="720" cy="80" r="95" fill="#ead8c1" opacity=".2"/>
+
+  <!-- table -->
+  <rect y="380" width="800" height="120" fill="url(#wood)"/>
+
+  <!-- wood lines -->
+  <path d="M0 415 C150 400 280 430 420 412 S680 400 800 420"
+        fill="none" stroke="#c88b52" stroke-width="5" opacity=".45"/>
+  <path d="M0 460 C180 440 320 475 510 455 S700 445 800 465"
+        fill="none" stroke="#5f341c" stroke-width="3" opacity=".25"/>
+
+
+  <!-- ================= SHADOWS ================= -->
+
+  <ellipse cx="440" cy="420"
+           rx="185" ry="28"
+           fill="#3b2115"
+           opacity=".22"
+           filter="url(#shadow)"/>
+
+  <ellipse cx="625" cy="365"
+           rx="125" ry="20"
+           fill="#3b2115"
+           opacity=".15"
+           filter="url(#shadow)"/>
+
+
+  <!-- ================= COFFEE SERVER ================= -->
+
+  <!-- glass body -->
+  <path d="
+    M330 300
+    L350 420
+    Q400 440 450 420
+    L470 300
+    Z"
+    fill="url(#glass)"
+    stroke="#6d625b"
+    stroke-width="4"/>
+
+  <!-- server neck -->
+  <path d="
+    M345 300
+    Q400 285 455 300
+    L450 330
+    Q400 342 350 330
+    Z"
+    fill="#292929"
+    stroke="#171717"
+    stroke-width="3"/>
+
+  <!-- coffee inside server -->
+  <path d="
+    M345 355
+    Q400 345 455 355
+    L450 415
+    Q400 435 350 415
+    Z"
+    fill="url(#coffee)"/>
+
+  <!-- coffee surface -->
+  <ellipse cx="400" cy="355"
+           rx="55" ry="12"
+           fill="#7b4327"/>
+
+  <ellipse cx="400" cy="353"
+           rx="38" ry="6"
+           fill="#9a5b35"
+           opacity=".55"/>
+
+  <!-- coffee highlight -->
+  <path d="M365 370 Q375 390 370 408"
+        fill="none"
+        stroke="#c07a4a"
+        stroke-width="4"
+        opacity=".35"/>
+
+  <!-- server handle -->
+  <path d="
+    M455 325
+    Q520 310 520 365
+    Q520 405 462 390"
+    fill="none"
+    stroke="#6d625b"
+    stroke-width="9"
+    stroke-linecap="round"/>
+
+  <path d="
+    M462 332
+    Q505 325 505 365
+    Q505 390 465 382"
+    fill="none"
+    stroke="#e5ded6"
+    stroke-width="3"
+    opacity=".65"/>
+
+
+  <!-- ================= DRIPPER ================= -->
+
+  <!-- black holder -->
+  <ellipse cx="400" cy="292"
+           rx="78" ry="17"
+           fill="#111214"/>
+
+  <rect x="330" y="280"
+        width="140"
+        height="22"
+        rx="10"
+        fill="#18191b"/>
+
+  <!-- dripper body -->
+  <path d="
+    M335 185
+    L465 185
+    L440 285
+    Q400 300 360 285
+    Z"
+    fill="#e7d5bb"
+    stroke="#745d49"
+    stroke-width="4"/>
+
+  <!-- dripper transparency -->
+  <path d="
+    M350 190
+    L450 190
+    L430 275
+    Q400 288 370 275
+    Z"
+    fill="#fff9ee"
+    opacity=".45"/>
+
+  <!-- coffee filter -->
+  <path d="
+    M348 195
+    Q400 180 452 195
+    L430 245
+    Q400 265 370 245
+    Z"
+    fill="#f6e5c9"/>
+
+  <!-- coffee grounds -->
+  <ellipse cx="400" cy="205"
+           rx="47" ry="15"
+           fill="#4a2517"/>
+
+  <path d="
+    M360 205
+    Q380 190 400 205
+    T440 205"
+    fill="none"
+    stroke="#7d482c"
+    stroke-width="7"
+    stroke-linecap="round"/>
+
+  <!-- dripper ribs -->
+  <path d="M355 205 L375 280"
+        stroke="#a98b6e" stroke-width="3" opacity=".65"/>
+  <path d="M375 195 L390 290"
+        stroke="#a98b6e" stroke-width="3" opacity=".65"/>
+  <path d="M400 190 L400 292"
+        stroke="#a98b6e" stroke-width="3" opacity=".65"/>
+  <path d="M425 195 L410 290"
+        stroke="#a98b6e" stroke-width="3" opacity=".65"/>
+  <path d="M445 205 L425 280"
+        stroke="#a98b6e" stroke-width="3" opacity=".65"/>
+
+
+  <!-- ================= WATER ================= -->
+
+  <!-- main water stream -->
+  <path d="
+    M405 80
+    C408 115 398 145 400 190"
+    fill="none"
+    stroke="#bde9f5"
+    stroke-width="9"
+    stroke-linecap="round"
+    opacity=".9"/>
+
+  <path d="
+    M405 80
+    C408 115 398 145 400 190"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity=".9"/>
+
+  <!-- splash -->
+  <circle cx="400" cy="202" r="5" fill="#d8f5fa"/>
+  <circle cx="382" cy="201" r="3" fill="#d8f5fa"/>
+  <circle cx="419" cy="200" r="3" fill="#d8f5fa"/>
+
+
+  <!-- ================= STEAM ================= -->
+
+  <path d="
+    M380 185
+    C360 160 390 145 375 120
+    C360 95 390 80 380 55"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="7"
+    stroke-linecap="round"
+    opacity=".6"
+    filter="url(#soft)"/>
+
+  <path d="
+    M420 180
+    C440 155 415 140 430 115
+    C445 90 420 75 435 50"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="6"
+    stroke-linecap="round"
+    opacity=".45"
+    filter="url(#soft)"/>
+
+
+  <!-- ================= GOOSENECK KETTLE ================= -->
+
+  <!-- kettle body -->
+  <path d="
+    M520 55
+    Q600 30 670 70
+    Q700 105 675 165
+    Q650 205 580 190
+    Q525 175 510 125
+    Q500 85 520 55
+    Z"
+    fill="url(#kettle)"
+    stroke="#101112"
+    stroke-width="5"/>
+
+  <!-- kettle highlight -->
+  <path d="
+    M535 72
+    Q575 50 610 55"
+    fill="none"
+    stroke="#77797b"
+    stroke-width="8"
+    stroke-linecap="round"
+    opacity=".35"/>
+
+  <!-- kettle lid -->
+  <ellipse cx="585" cy="57"
+           rx="50" ry="13"
+           fill="#222426"
+           stroke="#0c0d0e"
+           stroke-width="4"/>
+
+  <circle cx="585" cy="42"
+          r="12"
+          fill="#7a4b2b"/>
+
+  <!-- wooden lid knob -->
+  <ellipse cx="585" cy="38"
+           rx="15" ry="7"
+           fill="#9b643b"/>
+
+
+  <!-- gooseneck -->
+  <path d="
+    M525 105
+    C470 85 450 75 425 88
+    C395 103 425 130 445 140"
+    fill="none"
+    stroke="#17191b"
+    stroke-width="18"
+    stroke-linecap="round"/>
+
+  <!-- spout -->
+  <path d="
+    M445 140
+    Q425 135 415 115"
+    fill="none"
+    stroke="#17191b"
+    stroke-width="15"
+    stroke-linecap="round"/>
+
+  <!-- spout highlight -->
+  <path d="
+    M443 136
+    Q428 130 420 116"
+    fill="none"
+    stroke="#686a6c"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity=".5"/>
+
+
+  <!-- ================= COFFEE BEANS ================= -->
+
+  <g fill="#4a2818" stroke="#28150d" stroke-width="2">
+
+    <ellipse cx="150" cy="415" rx="13" ry="8"
+             transform="rotate(-25 150 415)"/>
+    <path d="M143 415 Q150 410 158 414"
+          fill="none" stroke="#9a5d36" stroke-width="2"/>
+
+    <ellipse cx="180" cy="430" rx="12" ry="8"
+             transform="rotate(20 180 430)"/>
+    <path d="M174 428 Q181 424 187 429"
+          fill="none" stroke="#9a5d36" stroke-width="2"/>
+
+    <ellipse cx="205" cy="407" rx="13" ry="8"
+             transform="rotate(-35 205 407)"/>
+    <path d="M198 407 Q205 402 212 405"
+          fill="none" stroke="#9a5d36" stroke-width="2"/>
+
+    <ellipse cx="230" cy="435" rx="12" ry="8"
+             transform="rotate(30 230 435)"/>
+    <path d="M224 433 Q230 430 237 434"
+          fill="none" stroke="#9a5d36" stroke-width="2"/>
+
+  </g>
+
+
+  <!-- ================= WOODEN BOARD ================= -->
+
+  <rect x="285" y="430"
+        width="230"
+        height="25"
+        rx="7"
+        fill="#6a3b20"/>
+
+  <rect x="295" y="423"
+        width="210"
+        height="20"
+        rx="6"
+        fill="#a96535"/>
+
+  <path d="M310 432 Q350 425 390 433"
+        fill="none"
+        stroke="#c7854d"
+        stroke-width="3"
+        opacity=".5"/>
+
+</svg>
