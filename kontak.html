@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontak Kopi Saji - Website UMKM</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/form.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/images/logo_saji.webp" alt="logo kopi saji" width="34" height="34">
+        Kopi Saji
+      </a>
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a class="active" aria-current="page" href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="konten" class="page">
+    <section class="about-hero" aria-labelledby="kontak-hero-title">
+      <div class="about-copy">
+        <span class="eyebrow">Batang Coffee Heritage</span>
+        <h1 id="kontak-hero-title">Kontak Kopi Saji</h1>
+        <p class="about-desc">Silakan kirim pertanyaan tentang produk, stok produk, reservasi, kerja sama, atau aduan
+          pelayanan. Tim Kopi Saji
+          siap membantu kamu.</p>
+      </div>
+      <div class="about-img-wrapper">
+        <img src="assets/images/saji_team_aduan.webp" alt="Team kopi saji siap menerima seluruh pesan" class="about-img" />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-title">
+      <div class="section-head">
+        <h2 id="form-title">Formulir Kontak</h2>
+        <p>Isi data berikut dengan sesungguhnya.</p>
+      </div>
+
+      <div class="contact-layout">
+      <form id="form-kontak" class="form-card" action="#" method="post" aria-labelledby="form-title">
+        <p class="form-note">Semua kolom wajib diisi, kecuali Nomor WhatsApp dan Waktu kontak.</p>
+
+        <div class="field">
+          <label for="nama">Nama lengkap</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="telepon">Nomor WhatsApp</label>
+          <input id="telepon" name="telepon" type="tel" autocomplete="tel" aria-describedby="telepon-help" />
+          <p id="telepon-help" class="help-text">Opsional. Isi jika ingin dihubungi lewat WhatsApp, contoh:
+            081234567890.</p>
+        </div>
+
+        <div class="field">
+          <label for="paket">Pilih paket yang diminati / Keperluan lain</label>
+          <select id="paket" name="paket" required aria-describedby="paket-help">
+            <option value="">Pilih salah satu</option>
+            <option value="seduh-dimanapun">Paket Seduh Dimanapun</option>
+            <option value="reseller">Paket Reseller</option>
+            <option value="reservasi">Reservasi</option>
+            <option value="aduan-pelayanan">Aduan Pelayanan</option>
+            <option value="kerja-sama">Kerjasama</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+          <p id="paket-help" class="help-text">Jika mengajukan aduan pelayanan, tulis kronologi di "Pesan".</p>
+        </div>
+
+        <fieldset class="field-full">
+          <legend>Waktu kontak yang diinginkan</legend>
+          <div class="choice-group">
+            <div class="choice">
+              <input id="waktu-kapan-saja" name="waktu" type="radio" value="kapan-saja" checked />
+              <label for="waktu-kapan-saja">Kapan saja</label>
+            </div>
+            <div class="choice">
+              <input id="waktu-pagi" name="waktu" type="radio" value="pagi" />
+              <label for="waktu-pagi">Pagi (10.00–12.00 WIB)</label>
+            </div>
+            <div class="choice">
+              <input id="waktu-siang" name="waktu" type="radio" value="siang" />
+              <label for="waktu-siang">Siang (12.00–15.00 WIB)</label>
+            </div>
+            <div class="choice">
+              <input id="waktu-sore" name="waktu" type="radio" value="sore" />
+              <label for="waktu-sore">Sore (15.00–18.00 WIB)</label>
+            </div>
+            <div class="choice">
+              <input id="waktu-malam" name="waktu" type="radio" value="malam" />
+              <label for="waktu-malam">Malam (18.00–21.00 WIB)</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="field-full">
+          <legend>Topik pertanyaan</legend>
+          <div class="choice-group">
+            <div class="choice">
+              <input id="topik-produk" name="topik" type="radio" value="produk" required />
+              <label for="topik-produk">Informasi produk</label>
+            </div>
+            <div class="choice">
+              <input id="topik-pesanan" name="topik" type="radio" value="pesanan" />
+              <label for="topik-pesanan">Status pesanan</label>
+            </div>
+            <div class="choice">
+              <input id="topik-kerja-sama" name="topik" type="radio" value="kerja-sama" />
+              <label for="topik-kerja-sama">Kerja sama</label>
+            </div>
+            <div class="choice">
+              <input id="topik-aduan-pelayanan" name="topik" type="radio" value="aduan-pelayanan" />
+              <label for="topik-aduan-pelayanan">Aduan pelayanan</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="field field-full">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
+        </div>
+
+        <button class="field-full" type="submit">Kirim Pesan</button>
+      </form>
+
+      <aside class="contact-side" aria-label="Info kontak dan preview data">
+        <div class="side-card">
+          <h3>Info Cepat</h3>
+          <dl class="side-list">
+            <div class="side-item">
+              <dt>Alamat Kedai</dt>
+              <dd>Jl. Veteran No. 12, Kabupaten Batang</dd>
+            </div>
+            <div class="side-item">
+              <dt>Jam Layanan</dt>
+              <dd>Setiap Hari (10.00–22.00 WIB)</dd>
+            </div>
+            <div class="side-item">
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/6281584666845" target="_blank" rel="noopener noreferrer">Hubungi Kopi Saji Batang</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="side-card">
+          <h3 id="preview-title">Preview Data</h3>
+          <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol "Kirim Pesan" diklik.</pre>
+        </div>
+      </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Kopi Saji. Data pada halaman ini bersifat dummy.</p>
+  </footer>
+</body>
+
+</html>
