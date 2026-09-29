@@ -14,4 +14,5 @@ form.addEventListener("submit", (event) => {
     `Topik: ${data.get("topik")}`,
     `Pesan: ${data.get("pesan")}`,
   ].join("\n");
+  document.querySelector("#status-form").hidden = false;
 });
