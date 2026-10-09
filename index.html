@@ -28,17 +28,15 @@
 
     <main id="konten" class="page">
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-copy">
-                <span class="eyebrow">Batang Coffee Heritage</span>
-                <h1>Kopi Saji</h1>
-                <p class="hero-desc">Seduhan lokal pilihan buat nemenin kamu nugas, kerja, atau sekadar lepas penat
-                    bareng temen.</p>
-                <div class="hero-action">
-                    <button id="promoButton" type="button" aria-pressed="false">Cek Promo Hari Ini !!!</button>
-                </div>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">BATANG COFFEE HERITAGE</p>
+                <h1 id="hero-title">Kopi Saji</h1>
+                <p>Kopi lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
+                <button id="promoButton" type="button">Lihat promo hari ini</button>
             </div>
-            <img src="assets/images/tampak_depan_saji.webp" alt="Tampak depan kedai Kopi Saji" class="hero-img" />
+            <img class="hero-image" src="assets/images/tampak_depan_saji.webp"
+                alt="Etalase Kopi Saji berisi kemasan kopi lokal" />
         </section>
 
         <section id="kontak" class="section" aria-labelledby="kontak-title">
@@ -68,7 +66,7 @@
                 <p>Empat racikan andalan yang paling sering dipesan pelanggan setia kami.</p>
             </div>
 
-            <div class="products">
+            <div class="product-grid product-grid--two">
                 <figure class="product-card">
                     <img src="assets/images/kopi_signature.webp" alt="Kopi Saji Signature disajikan dalam gelas"
                         class="product-img">

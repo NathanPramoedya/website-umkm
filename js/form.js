@@ -1,5 +1,7 @@
 const form = document.querySelector("#form-kontak");
 const preview = document.querySelector("#preview-form");
+const statusMsg = document.querySelector("#status-form");
+const defaultPreview = preview.textContent;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -14,5 +16,10 @@ form.addEventListener("submit", (event) => {
     `Topik: ${data.get("topik")}`,
     `Pesan: ${data.get("pesan")}`,
   ].join("\n");
-  document.querySelector("#status-form").hidden = false;
+  statusMsg.hidden = false;
+});
+
+form.addEventListener("reset", () => {
+  preview.textContent = defaultPreview;
+  statusMsg.hidden = true;
 });

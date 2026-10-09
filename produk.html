@@ -27,17 +27,13 @@
     </header>
 
     <main id="konten" class="page">
-        <section class="about-hero" aria-labelledby="produk-hero-title">
-            <div class="about-copy">
-                <span class="eyebrow">Batang Coffee Heritage</span>
+        <section class="hero" aria-labelledby="produk-hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Batang Coffee Heritage</p>
                 <h1 id="produk-hero-title">Produk Kopi Saji</h1>
-                <p class="about-desc">Ada dua pilihan paket: <strong>Dine In</strong> untuk dinikmati langsung di
-                    kedai, dan <strong>Seduh dimanapun</strong> untuk kamu bawa pulang.</p>
+                <p>Ada dua pilihan paket: <strong>Dine In</strong> untuk dinikmati langsung di kedai, dan <strong>Seduh dimanapun</strong> untuk kamu bawa pulang.</p>
             </div>
-            <div class="about-img-wrapper">
-                <img src="assets/images/biji_kopi_saji.webp" alt="Pilihan biji kopi Saji"
-                    class="about-img" />
-            </div>
+            <img class="hero-image" src="assets/images/biji_kopi_saji.webp" alt="Pilihan biji kopi Saji" />
         </section>
 
         <section class="section" aria-labelledby="kategori-title">
@@ -50,56 +46,77 @@
             </ul>
         </section>
 
-        <section class="section" aria-labelledby="semua-produk-title">
+        <section class="section" aria-labelledby="produk-pilihan-title">
             <div class="section-head">
-                <h2 id="semua-produk-title">Semua Produk</h2>
-                <p>Empat racikan yang bisa kamu pesan langsung di kedai.</p>
+                <h2 id="produk-pilihan-title">Produk Pilihan</h2>
             </div>
-            <div class="products">
-                <figure class="product-card">
-                    <img src="assets/images/kopi_signature.webp" alt="Kopi Saji Signature disajikan dalam gelas"
-                        class="product-img">
-                    <figcaption>
-                        <div class="product-header">
-                            <h3>Kopi Saji Signature</h3>
-                            <span class="price">Rp20k</span>
-                        </div>
-                        <p>Blend robusta-arabika khas Batang dengan hint cokelat & karamel.</p>
-                    </figcaption>
-                </figure>
-                <figure class="product-card">
-                    <img src="assets/images/cold_brew_aren.webp" alt="Cold Brew Aren dengan es dalam gelas"
-                        class="product-img">
-                    <figcaption>
-                        <div class="product-header">
-                            <h3>Cold Brew Aren</h3>
-                            <span class="price">Rp20k</span>
-                        </div>
-                        <p>Diseduh dingin 12 jam, dipadukan manis alami gula aren lokal.</p>
-                    </figcaption>
-                </figure>
-                <figure class="product-card">
-                    <img src="assets/images/peach_coffee.webp" alt="Americano Peach dengan potongan buah peach"
-                        class="product-img">
-                    <figcaption>
-                        <div class="product-header">
-                            <h3>Americano Peach</h3>
-                            <span class="price">Rp22k</span>
-                        </div>
-                        <p>Double shot espresso dengan sentuhan manis-segar buah peach.</p>
-                    </figcaption>
-                </figure>
-                <figure class="product-card">
-                    <img src="assets/images/es_kopi_kelapa.webp"
-                        alt="Es Kopi Kelapa Muda dengan serutan kelapa di atasnya" class="product-img">
-                    <figcaption>
-                        <div class="product-header">
-                            <h3>Es Kopi Kelapa Muda</h3>
-                            <span class="price">Rp23k</span>
-                        </div>
-                        <p>Espresso bertemu santan kelapa muda asli dan es batu, ringan dan segar.</p>
-                    </figcaption>
-                </figure>
+            <div class="product-grid">
+                <article class="product-card">
+                    <span class="product-badge">Terlaris</span>
+                    <h3>Kopi Saji Signature</h3>
+                    <p>Blend robusta-arabika khas Batang dengan hint coklat & karamel.</p>
+                    <p class="price">Rp20.000</p>
+                    <div class="card-actions">
+                        <a class="button" href="kontak.html">Tanya produk</a>
+                        <a href="#dinein-title">Lihat tabel harga</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge">Segar</span>
+                    <h3>Cold Brew Aren</h3>
+                    <p>Diseduh dingin 12 jam, dipadukan manis alami gula aren lokal.</p>
+                    <p class="price">Rp22.000</p>
+                    <div class="card-actions">
+                        <a class="button" href="kontak.html">Tanya produk</a>
+                        <a href="#dinein-title">Lihat tabel harga</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge">Segar</span>
+                    <h3>Americano Peach</h3>
+                    <p>Double shot espresso dengan sentuhan manis-segar buah peach.</p>
+                    <p class="price">Rp22.000</p>
+                    <div class="card-actions">
+                        <a class="button" href="kontak.html">Tanya produk</a>
+                        <a href="#dinein-title">Lihat tabel harga</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge">Segar</span>
+                    <h3>Es Kopi Kelapa Muda</h3>
+                    <p>Espresso bertemu santan kelapa muda asli dan es batu, ringan, dan segar.</p>
+                    <p class="price">Rp23.000</p>
+                    <div class="card-actions">
+                        <a class="button" href="kontak.html">Tanya produk</a>
+                        <a href="#dinein-title">Lihat tabel harga</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge">Paket</span>
+                    <h3>Paket Kantor Mingguan</h3>
+                    <p>Paket kopi mingguan cocok seduh di kantor.</p>
+                    <p class="price">Rp95.000</p>
+                    <div class="card-actions">
+                        <a class="button" href="kontak.html">Tanya produk</a>
+                        <a href="#dinein-title">Lihat tabel harga</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <span class="product-badge">Paket</span>
+                    <h3>Paket Tester Pelanggan Baru</h3>
+                    <p>Paket tester cocok untuk pelanggan baru.</p>
+                    <p class="price">Rp35.000</p>
+                    <div class="card-actions">
+                        <a class="button" href="kontak.html">Tanya produk</a>
+                        <a href="#dinein-title">Lihat tabel harga</a>
+                    </div>
+                </article>
+
             </div>
         </section>
 

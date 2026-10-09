@@ -28,18 +28,14 @@
   </header>
 
   <main id="konten" class="page">
-    <section class="about-hero" aria-labelledby="kontak-hero-title">
-      <div class="about-copy">
-        <span class="eyebrow">Batang Coffee Heritage</span>
-        <h1 id="kontak-hero-title">Kontak Kopi Saji</h1>
-        <p class="about-desc">Silakan kirim pertanyaan tentang produk, stok produk, reservasi, kerja sama, atau aduan
-          pelayanan. Tim Kopi Saji
-          siap membantu kamu.</p>
-      </div>
-      <div class="about-img-wrapper">
-        <img src="assets/images/saji_team_aduan.webp" alt="Team kopi saji siap menerima seluruh pesan" class="about-img" />
-      </div>
-    </section>
+    <section class="hero" aria-labelledby="kontak-hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Batang Coffee Heritage</p>
+                <h1 id="kontak-hero-title">Kontak Kopi Saji</h1>
+                <p>Silakan kirim pertanyaan tentang produk, stok produk, reservasi, kerja sama, atau aduan pelayanan. Tim Kopi Saji siap membantu kamu.</p>
+            </div>
+            <img class="hero-image" src="assets/images/saji_team_aduan.webp" alt="Team kopi saji siap menerima seluruh pesan" />
+        </section>
 
     <section class="section" aria-labelledby="form-title">
       <div class="section-head">
@@ -135,7 +131,10 @@
           <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
         </div>
 
-        <button class="field-full" type="submit">Kirim Pesan</button>
+        <div class="form-actions field-full">
+          <button type="reset" class="button-secondary">Reset</button>
+          <button type="submit">Kirim Pesan</button>
+        </div>
       </form>
 
       <aside class="contact-side" aria-label="Info kontak dan preview data">

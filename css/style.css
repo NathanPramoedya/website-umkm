@@ -1,3 +1,10 @@
+/* =====================================================
+   Kopi Saji - style.css (P06: Layout Grid dan Flexbox)
+   Halaman utama P06: kontak.html
+   Tanpa media query atau breakpoint (ditunda ke P07)
+   ===================================================== */
+
+/* ---------- 1. Design token P05 ---------- */
 :root {
     --color-primary: #6f3b1f;
     --color-primary-strong: #4b2715;
@@ -25,6 +32,7 @@
     --color-success-bg: #f0fdf4;
 }
 
+/* ---------- 2. Base ---------- */
 *,
 *::before,
 *::after {
@@ -44,148 +52,39 @@ body {
     line-height: 1.6;
 }
 
-.page {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 32px 20px;
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    text-wrap: balance;
 }
 
-.hero {
-    padding: 36px;
-    color: white;
-    background: var(--color-primary);
-    border-radius: 24px;
+h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
 }
 
-.eyebrow {
-    margin: 0 0 8px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+p,
+li {
+    max-width: 68ch;
 }
 
-.products {
-    padding-left: 1.2rem;
-}
-
-button {
-    padding: 12px 18px;
-    color: var(--color-text);
-    font-weight: 700;
-    cursor: pointer;
-    background: #ffd166;
-    border: 0;
-    border-radius: 999px;
-}
-
-.skip-link {
-    position: absolute;
-    left: -9999px;
-    padding: 8px 12px;
-    color: white;
-    background: var(--color-text);
-}
-
-.skip-link:focus {
-    top: 8px;
-    left: 8px;
-}
-
-.site-header {
-    padding: 16px 20px;
-    background: white;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.nav {
-    max-width: 920px;
-    margin: 0 auto;
-}
-
-.brand {
-    display: inline-block;
-    margin-bottom: 8px;
-    color: var(--color-primary-strong);
-    font-weight: 800;
-    text-decoration: none;
-}
-
-.nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.nav li {
-    display: inline-block;
-    margin-right: 12px;
-}
-
-.nav a[aria-current="page"] {
-    font-weight: 800;
-}
-
-.site-footer {
-    padding: 24px 20px;
-    color: white;
-    text-align: center;
-    background: var(--color-text);
-}
-
-img {
+img,
+video {
     max-width: 100%;
     height: auto;
+}
+
+audio {
+    max-width: 100%;
 }
 
 figure {
-    margin: 0 0 24px;
+    margin: 0;
 }
 
-figcaption {
-    margin-top: 8px;
-    color: var(--color-muted);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
+figcaption,
 caption {
-    margin-bottom: 8px;
-    font-weight: 700;
-    text-align: left;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid var(--color-border);
-}
-
-.field {
-    margin-bottom: 16px;
-}
-
-.field label {
-    display: block;
-    margin-bottom: 6px;
-}
-
-fieldset {
-    margin: 0 0 16px;
-}
-
-#preview-form {
-    padding: 16px;
-    white-space: pre-wrap;
-    background: white;
-    border: 1px solid var(--color-border);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+    color: var(--color-muted);
 }
 
 a {
@@ -201,6 +100,7 @@ a:hover {
     outline-offset: 3px;
 }
 
+/* ---------- 3. Skip link ---------- */
 .skip-link {
     position: absolute;
     top: -5rem;
@@ -214,6 +114,7 @@ a:hover {
     top: var(--space-3);
 }
 
+/* ---------- 4. Header, navigasi, footer ---------- */
 .site-header,
 .site-footer {
     padding: var(--space-3) var(--space-4);
@@ -235,23 +136,36 @@ a:hover {
     margin-inline: auto;
 }
 
-.brand {
-    display: inline-block;
-    margin-bottom: var(--space-2);
-    color: var(--color-text);
-    font-weight: 800;
-    text-decoration: none;
+.page {
+    padding-block: var(--space-5);
 }
 
-.nav ul {
+/* Flexbox #1: navigasi (main axis = horizontal, cross axis = vertikal) */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Flexbox #2: daftar link navigasi */
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.nav li {
-    display: inline-block;
-    margin: 0 var(--space-2) var(--space-1) 0;
+.brand {
+    display: inline-flex;
+    gap: var(--space-1);
+    align-items: center;
+    color: var(--color-text);
+    font-weight: 800;
+    text-decoration: none;
 }
 
 .nav a[aria-current="page"] {
@@ -263,42 +177,25 @@ a:hover {
     border-radius: var(--radius-sm);
 }
 
-.page {
-    padding-block: var(--space-5);
-}
-
-.hero {
-    padding: var(--space-5);
-    color: var(--color-surface);
-    background: var(--color-primary);
-    border-radius: var(--radius-md);
-}
-
-h1,
-h2,
-h3 {
-    line-height: 1.2;
-    text-wrap: balance;
-}
-
-h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-}
-
-p,
-li {
-    max-width: 68ch;
-}
-
+/* ---------- 5. Teks pendukung & seksi ---------- */
 .eyebrow {
+    margin: 0 0 var(--space-1);
     color: var(--color-primary);
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-.hero .eyebrow {
-    color: var(--color-highlight);
+.section {
+    margin-top: var(--space-5);
+}
+
+.section-head h2 {
+    margin-bottom: var(--space-1);
+}
+
+.section-head p {
+    margin-top: 0;
 }
 
 .price {
@@ -306,7 +203,9 @@ li {
     font-weight: 800;
 }
 
-button {
+/* ---------- 6. Tombol & tautan tombol ---------- */
+button,
+.button {
     display: inline-block;
     padding: var(--space-2) var(--space-3);
     color: var(--color-surface);
@@ -319,9 +218,21 @@ button {
     border-radius: var(--radius-sm);
 }
 
-button:hover {
+button:hover,
+.button:hover {
     color: var(--color-surface);
     background: var(--color-primary-strong);
+}
+
+button.button-secondary {
+    color: var(--color-primary-strong);
+    background: var(--color-surface);
+    border: 1px solid var(--color-primary);
+}
+
+button.button-secondary:hover {
+    color: var(--color-primary-strong);
+    background: var(--color-highlight);
 }
 
 .hero button {
@@ -334,10 +245,81 @@ button:hover {
     background: var(--color-highlight-strong);
 }
 
+.hero button.is-promo {
+    color: var(--color-primary-strong);
+    background: var(--color-surface);
+}
+
+/* ---------- 7. Kartu (komponen dasar) ---------- */
+.product-card,
+.media-card,
+.form-card,
+.side-card,
+.value-item,
+.contact-card,
+.aside-note,
+.price-table-wrap {
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+/* Flexbox #3: card vertikal (main axis = vertikal) */
+.product-card {
+    position: relative; /* containing block untuk .product-badge */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.product-card h3,
+.product-card p {
+    margin: 0;
+}
+
+.product-img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+.product-card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-top: var(--space-1);
+}
+
+/* Flexbox #4: judul + harga (main axis = horizontal) */
+.product-header {
+    display: flex;
+    gap: var(--space-2);
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+/* Positioning: badge menempel di dalam card (containing block = .product-card) */
+article.product-card {
+    padding-top: var(--space-5); /* ruang untuk badge agar tidak menimpa judul */
+}
+
+.product-badge {
+    position: absolute;
+    top: var(--space-1);
+    right: var(--space-3);
+    padding: 0 var(--space-2);
+    color: var(--color-primary-strong);
+    font-size: 0.875rem;
+    font-weight: 800;
+    background: var(--color-highlight);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
 .new-badge {
-    display: inline-block;
-    margin-bottom: var(--space-1);
-    padding: 2px var(--space-2);
+    align-self: flex-start;
+    padding: 0 var(--space-2);
     color: var(--color-on-accent);
     font-size: 0.75rem;
     font-weight: 800;
@@ -347,31 +329,104 @@ button:hover {
     border-radius: var(--radius-lg);
 }
 
-.product-card,
-.media-card,
-table,
-form {
-    margin-block: var(--space-3);
-    padding: var(--space-3);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
+/* Flexbox #5: aksi card (main axis = horizontal, wrap) */
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    align-items: center;
+    margin-top: auto;
+}
+
+/* ---------- 8. CSS Grid: hero & halaman ---------- */
+/* Grid hero (semua halaman): 2 kolom (teks | gambar) */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-5);
+    color: var(--color-surface);
+    background: var(--color-primary);
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-card);
 }
 
-figure {
-    margin-inline: 0;
+.hero .eyebrow {
+    color: var(--color-highlight);
 }
 
-figcaption,
-caption {
-    color: var(--color-muted);
+.hero-content {
+    min-width: 0; /* cegah teks panjang melebarkan track Grid */
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: var(--radius-md);
+}
+
+/* Grid katalog produk: 3 kolom */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4) var(--space-3);
+}
+
+/* Varian beranda: 4 menu favorit -> 2 x 2 */
+.product-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Grid galeri: 2 kolom */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.media-card figcaption {
+    margin-top: var(--space-1);
+}
+
+.media-card img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+/* Grid nilai (Tentang) dan info kontak (Beranda): 3 kolom */
+.values-grid,
+.contact-card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.value-item h3,
+.value-item p,
+.contact-item p {
+    margin: 0;
+}
+
+.contact-card {
+    margin-top: var(--space-3);
+}
+
+.aside-note {
+    margin-top: var(--space-5);
+    background: var(--color-highlight);
+}
+
+.category-list {
+    padding-left: var(--space-4);
+}
+
+/* ---------- 9. Tabel ---------- */
+.price-table-wrap {
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 0;
 }
 
 caption {
@@ -391,8 +446,47 @@ th {
     background: var(--color-surface-soft);
 }
 
-.field {
-    margin-bottom: var(--space-3);
+/* ---------- 10. Media ---------- */
+.video-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.video-wrap video,
+.audio-player {
+    width: 100%;
+}
+
+.video-caption {
+    margin: 0;
+    color: var(--color-muted);
+}
+
+/* ---------- 11. HALAMAN UTAMA P06: Kontak ---------- */
+/* Grid level 1: 2 kolom (form | sidebar), kolom form lebih lebar */
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: start;
+}
+
+/* Grid level 2 (nested): 2 kolom field di dalam form */
+.form-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+.form-note,
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.form-note {
+    margin: 0;
+    color: var(--color-muted);
 }
 
 .field label,
@@ -420,29 +514,90 @@ legend {
     border-color: var(--bg-interactive-strong);
 }
 
+.help-text {
+    margin: var(--space-1) 0 0;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
 input[type="radio"],
 input[type="checkbox"] {
     width: auto;
 }
 
-fieldset {
-    margin: 0 0 var(--space-3);
-    padding: var(--space-3);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+/* Flexbox #6: grup pilihan radio (main axis = horizontal, wrap) */
+.choice-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
 }
 
-audio {
-    max-width: 100%;
+/* Flexbox #7: radio + label sebaris (cross axis = center) */
+.choice {
+    display: flex;
+    gap: var(--space-1);
+    align-items: center;
+}
+
+.choice label {
+    display: inline;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Flexbox #8: form action (main axis = horizontal, rata kanan) */
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Flexbox #9: sidebar (main axis = vertikal) */
+.contact-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.side-card h3 {
+    margin-top: 0;
+}
+
+.side-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin: 0;
+}
+
+.side-item dt {
+    font-weight: 700;
+}
+
+.side-item dd {
+    margin: 0;
 }
 
 #preview-form {
+    margin: 0;
     padding: var(--space-3);
+    overflow-wrap: anywhere;
     white-space: pre-wrap;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
 }
+
 .status-msg {
     margin: 0 0 var(--space-2);
     padding: var(--space-2) var(--space-3);
