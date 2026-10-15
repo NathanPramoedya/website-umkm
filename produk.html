@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Produk Kopi Saji - Website UMKM</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -26,14 +27,14 @@
         </nav>
     </header>
 
-    <main id="konten" class="page">
+    <main id="konten" class="page" tabindex="-1">
         <section class="hero" aria-labelledby="produk-hero-title">
             <div class="hero-content">
                 <p class="eyebrow">Batang Coffee Heritage</p>
                 <h1 id="produk-hero-title">Produk Kopi Saji</h1>
                 <p>Ada dua pilihan paket: <strong>Dine In</strong> untuk dinikmati langsung di kedai, dan <strong>Seduh dimanapun</strong> untuk kamu bawa pulang.</p>
             </div>
-            <img class="hero-image" src="assets/images/biji_kopi_saji.webp" alt="Pilihan biji kopi Saji" />
+            <img class="hero-image" src="assets/images/biji_kopi_saji.webp" width="640" height="360" fetchpriority="high" alt="Pilihan biji kopi Saji" />
         </section>
 
         <section class="section" aria-labelledby="kategori-title">
@@ -42,7 +43,7 @@
             </div>
             <ul class="category-list">
                 <li>Paket Dine In — diseduh dan langsung dinikmati di kedai</li>
-                <li>Paket Seduh di Rumah — dibawa pulang untuk diseduh sendiri</li>
+                <li>Paket Seduh dimanapun — dibawa pulang untuk diseduh sendiri di rumah atau kantor</li>
             </ul>
         </section>
 
@@ -66,7 +67,7 @@
                     <span class="product-badge">Segar</span>
                     <h3>Cold Brew Aren</h3>
                     <p>Diseduh dingin 12 jam, dipadukan manis alami gula aren lokal.</p>
-                    <p class="price">Rp22.000</p>
+                    <p class="price">Rp20.000</p>
                     <div class="card-actions">
                         <a class="button" href="kontak.html">Tanya produk</a>
                         <a href="#dinein-title">Lihat tabel harga</a>
@@ -102,7 +103,7 @@
                     <p class="price">Rp95.000</p>
                     <div class="card-actions">
                         <a class="button" href="kontak.html">Tanya produk</a>
-                        <a href="#dinein-title">Lihat tabel harga</a>
+                        <a href="#paket-title">Lihat tabel harga</a>
                     </div>
                 </article>
 
@@ -113,21 +114,22 @@
                     <p class="price">Rp35.000</p>
                     <div class="card-actions">
                         <a class="button" href="kontak.html">Tanya produk</a>
-                        <a href="#dinein-title">Lihat tabel harga</a>
+                        <a href="#paket-title">Lihat tabel harga</a>
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <section class="section" aria-labelledby="dinein-title">
+            <section class="section" aria-labelledby="dinein-title">
             <div class="section-head">
                 <h2 id="dinein-title">Paket Dine In</h2>
                 <p>Disajikan langsung di kedai, siap minum di tempat.</p>
             </div>
-            <div class="price-table-wrap">
+    
+            <div class="table-scroll" role="region" aria-labelledby="daftar-harga-dinein" tabindex="0">
                 <table>
-                    <caption>Daftar harga paket dine in Kopi Saji</caption>
+                    <caption id="daftar-harga-dinein">Daftar harga paket dine in Kopi Saji</caption>
                     <thead>
                         <tr>
                             <th scope="col">Produk</th>
@@ -161,56 +163,57 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="paket-title">
-            <div class="section-head">
-                <h2 id="paket-title">Paket Seduh dimanapun</h2>
-                <p>Kemasan kopi untuk diseduh sendiri di rumah atau kantor.</p>
-            </div>
-            <div class="price-table-wrap">
-                <table>
-                    <caption>Daftar harga paket seduh dimanapun Kopi Saji</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Produk</th>
-                            <th scope="col">Kemasan</th>
-                            <th scope="col">Harga</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Kopi Saji Signature</th>
-                            <td>Bubuk 250 gram</td>
-                            <td class="price-cell">Rp45.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Cold Brew Aren</th>
-                            <td>Botol 250 ml</td>
-                            <td class="price-cell">Rp22.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Americano Peach</th>
-                            <td>Sachet drip 12 gram</td>
-                            <td class="price-cell">Rp18.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Es Kopi Kelapa Muda</th>
-                            <td>Sachet drip 12 gram</td>
-                            <td class="price-cell">Rp18.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Paket Kantor Mingguan</th>
-                            <td>5 sachet drip @ 15 gram</td>
-                            <td class="price-cell">Rp95.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Paket Tester Pelanggan Baru</th>
-                            <td>3 sachet drip @ 10 gram</td>
-                            <td class="price-cell">Rp35.000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            <section class="section" aria-labelledby="paket-title">
+        <div class="section-head">
+            <h2 id="paket-title">Paket Seduh dimanapun</h2>
+            <p>Kemasan kopi untuk diseduh sendiri di rumah atau kantor.</p>
+        </div>
+        
+        <div class="table-scroll" role="region" aria-labelledby="daftar-harga-seduh" tabindex="0">
+            <table>
+                <caption id="daftar-harga-seduh">Daftar harga paket seduh dimanapun Kopi Saji</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Produk</th>
+                        <th scope="col">Kemasan</th>
+                        <th scope="col">Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Kopi Saji Signature</th>
+                        <td>Bubuk 250 gram</td>
+                        <td class="price-cell">Rp45.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cold Brew Aren</th>
+                        <td>Botol 250 ml</td>
+                        <td class="price-cell">Rp20.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Americano Peach</th>
+                        <td>Sachet drip 12 gram</td>
+                        <td class="price-cell">Rp18.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Es Kopi Kelapa Muda</th>
+                        <td>Sachet drip 12 gram</td>
+                        <td class="price-cell">Rp18.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Paket Kantor Mingguan</th>
+                        <td>5 sachet drip @ 15 gram</td>
+                        <td class="price-cell">Rp95.000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Paket Tester Pelanggan Baru</th>
+                        <td>3 sachet drip @ 10 gram</td>
+                        <td class="price-cell">Rp35.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     </main>
 
     <footer class="site-footer">

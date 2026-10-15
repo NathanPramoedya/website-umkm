@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeri Kopi Saji - Website UMKM</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -26,14 +27,14 @@
         </nav>
     </header>
 
-    <main id="konten" class="page">
+    <main id="konten" class="page" tabindex="-1">
         <section class="hero" aria-labelledby="galeri-hero-title">
             <div class="hero-content">
                 <p class="eyebrow">Batang Coffee Heritage</p>
                 <h1 id="galeri-hero-title">Galeri Kopi Saji</h1>
                 <p>Sekilas produk, suasana kedai, dan orang-orang di balik setiap cangkir Kopi Saji.</p>
             </div>
-            <img class="hero-image" src="assets/images/galeri_saji.webp" alt="Bingkai tempoe doeloe saji" />
+            <img class="hero-image" src="assets/images/galeri_saji.webp" width="640" height="360" fetchpriority="high" alt="Bingkai foto bergaya tempo dulu di Kopi Saji" />
         </section>
 
         <section class="section" aria-labelledby="produk-media-title">
@@ -43,20 +44,19 @@
             </div>
             <div class="gallery-grid">
                 <figure class="media-card">
-                    <img src="assets/images/kopi_signature.webp" alt="Kopi Saji Signature disajikan dalam gelas" />
+                    <img src="assets/images/kopi_signature.webp" width="640" height="360" loading="lazy" alt="Kopi Saji Signature disajikan dalam gelas" />
                     <figcaption>Kopi Saji Signature — blend robusta-arabika khas Batang.</figcaption>
                 </figure>
                 <figure class="media-card">
-                    <img src="assets/images/cold_brew_aren.webp" alt="Cold Brew Aren dengan es dalam gelas" />
+                    <img src="assets/images/cold_brew_aren.webp" width="640" height="360" loading="lazy" alt="Cold Brew Aren dengan es dalam gelas" />
                     <figcaption>Cold Brew Aren — diseduh dingin 12 jam dengan gula aren lokal.</figcaption>
                 </figure>
                 <figure class="media-card">
-                    <img src="assets/images/peach_coffee.webp" alt="Americano Peach dengan potongan buah peach" />
+                    <img src="assets/images/peach_coffee.webp" width="640" height="360" loading="lazy" alt="Americano Peach dengan potongan buah peach" />
                     <figcaption>Americano Peach — double shot espresso dengan sentuhan peach.</figcaption>
                 </figure>
                 <figure class="media-card">
-                    <img src="assets/images/es_kopi_kelapa.webp"
-                        alt="Es Kopi Kelapa Muda dengan serutan kelapa di atasnya" />
+                    <img src="assets/images/es_kopi_kelapa.webp" width="640" height="360" loading="lazy" alt="Es Kopi Kelapa Muda dengan serutan kelapa di atasnya" />
                     <figcaption>Es Kopi Kelapa Muda — espresso dengan santan kelapa muda asli.</figcaption>
                 </figure>
             </div>
@@ -68,12 +68,11 @@
             </div>
             <div class="gallery-grid">
                 <figure class="media-card">
-                    <img src="assets/images/waiters_saji.webp"
-                        alt="Suasana kedai Kopi Saji dengan waiters yang siap melayani" />
+                    <img src="assets/images/waiters_saji.webp" width="640" height="360" loading="lazy" alt="Suasana kedai Kopi Saji dengan waiters yang siap melayani" />
                     <figcaption>Rasakan kenikmatan kopi lokal dengan suasana rumahan.</figcaption>
                 </figure>
                 <figure class="media-card">
-                    <img src="assets/images/suasana_saji.webp" alt="Suasana pelanggan di kedai Kopi Saji" />
+                    <img src="assets/images/suasana_saji.webp" width="640" height="360" loading="lazy" alt="Suasana pelanggan di kedai Kopi Saji" />
                     <figcaption>Tempat nyaman untuk menikmati kopi dan suasana yang hangat.</figcaption>
                 </figure>
             </div>
@@ -86,11 +85,11 @@
             </div>
             <div class="gallery-grid">
                 <figure class="media-card">
-                    <img src="assets/images/barista_saji.webp" alt="Barista Kopi Saji sedang menyeduh kopi" />
+                    <img src="assets/images/barista_saji.webp" width="640" height="360" loading="lazy" alt="Barista Kopi Saji sedang menyeduh kopi" />
                     <figcaption>Barista kami menjaga konsistensi rasa di setiap gelas.</figcaption>
                 </figure>
                 <figure class="media-card">
-                    <img src="assets/images/saji_team.webp" alt="Tim Kopi Saji berfoto bersama di depan kedai" />
+                    <img src="assets/images/saji_team.webp" width="640" height="360" loading="lazy" alt="Tim Kopi Saji berfoto bersama di depan kedai" />
                     <figcaption>Tim kecil yang menjalankan operasional kedai setiap hari.</figcaption>
                 </figure>
             </div>
@@ -101,7 +100,7 @@
                 <h2 id="video-title">Video Profil Kedai</h2>
             </div>
             <div class="video-wrap">
-                <video controls poster="assets/images/saji_team.webp" aria-describedby="video-note">
+                <video controls preload="none" playsinline poster="assets/images/saji_team.webp" aria-describedby="video-note">
                     <source src="assets/video/video_tim_saji.mp4" type="video/mp4">
                     Browser Anda tidak mendukung pemutar video. Silakan unduh video profil kedai melalui tautan
                     WhatsApp kami.

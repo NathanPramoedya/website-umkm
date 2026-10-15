@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kontak Kopi Saji - Website UMKM</title>
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/form.js" defer></script>
 </head>
@@ -27,14 +28,14 @@
     </nav>
   </header>
 
-  <main id="konten" class="page">
+  <main id="konten" class="page" tabindex="-1">
     <section class="hero" aria-labelledby="kontak-hero-title">
             <div class="hero-content">
                 <p class="eyebrow">Batang Coffee Heritage</p>
                 <h1 id="kontak-hero-title">Kontak Kopi Saji</h1>
                 <p>Silakan kirim pertanyaan tentang produk, stok produk, reservasi, kerja sama, atau aduan pelayanan. Tim Kopi Saji siap membantu kamu.</p>
             </div>
-            <img class="hero-image" src="assets/images/saji_team_aduan.webp" alt="Team kopi saji siap menerima seluruh pesan" />
+            <img class="hero-image" src="assets/images/saji_team_aduan.webp" width="640" height="360" fetchpriority="high" alt="Team kopi saji siap menerima seluruh pesan" />
         </section>
 
     <section class="section" aria-labelledby="form-title">
@@ -59,7 +60,7 @@
 
         <div class="field">
           <label for="telepon">Nomor WhatsApp</label>
-          <input id="telepon" name="telepon" type="tel" autocomplete="tel" aria-describedby="telepon-help" />
+          <input id="telepon" name="telepon" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="telepon-help" />
           <p id="telepon-help" class="help-text">Opsional. Isi jika ingin dihubungi lewat WhatsApp, contoh:
             081234567890.</p>
         </div>
