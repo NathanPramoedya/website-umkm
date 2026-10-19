@@ -7,6 +7,7 @@
     <title>Tentang Kopi Saji - Website UMKM</title>
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +18,8 @@
                 <img class="brand-mark" src="assets/images/logo_saji.webp" alt="logo kopi saji" width="34" height="34">
                 Kopi Saji
             </a>
-            <ul class="nav-list">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Menu navigasi"><span class="nav-toggle-icon" aria-hidden="true"></span></button>
+            <ul class="nav-list" id="nav-list">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a class="active" aria-current="page" href="tentang.html">Tentang Kami</a></li>
                 <li><a href="produk.html">Produk</a></li>

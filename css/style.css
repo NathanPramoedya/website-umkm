@@ -665,3 +665,103 @@ input[type="checkbox"] {
         grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
     }
 }
+
+/* ===== Hamburger menu (mobile) ===== */
+.nav-toggle {
+    display: none;
+    width: var(--tap-size);
+    padding: 0;
+    color: var(--color-primary-strong);
+    background: var(--color-surface);
+    border: 1px solid var(--color-primary);
+}
+
+.nav-toggle:hover {
+    color: var(--color-primary-strong);
+    background: var(--color-highlight);
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-toggle-icon {
+    position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+    position: absolute;
+    left: 0;
+    content: "";
+}
+
+.nav-toggle-icon::before {
+    top: -0.4rem;
+}
+
+.nav-toggle-icon::after {
+    top: 0.4rem;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+    background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+    transform: translateY(0.4rem) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+    transform: translateY(-0.4rem) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-toggle-icon,
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+        transition: none;
+    }
+}
+
+@media (max-width: 47.99rem) {
+    .nav--js {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-1) var(--space-3);
+    }
+
+    .nav--js .nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav--js .nav-toggle[aria-expanded="false"] ~ .nav-list {
+        display: none;
+    }
+
+    .nav--js .nav-list {
+        flex: 1 0 100%;
+        flex-direction: column;
+        gap: var(--space-1);
+        padding-top: var(--space-2);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .nav--js .nav-list li {
+        max-width: none;
+    }
+
+    .nav--js .nav-list a {
+        display: flex;
+        width: 100%;
+    }
+}
