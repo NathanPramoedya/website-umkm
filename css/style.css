@@ -624,6 +624,7 @@ input[type="checkbox"] {
 }
 
 @media (min-width: 42rem) {
+
     .gallery-grid,
     .product-grid--two,
     .form-card {
@@ -666,7 +667,6 @@ input[type="checkbox"] {
     }
 }
 
-/* ===== Hamburger menu (mobile) ===== */
 .nav-toggle {
     display: none;
     width: var(--tap-size);
@@ -724,6 +724,7 @@ input[type="checkbox"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .nav-toggle-icon,
     .nav-toggle-icon::before,
     .nav-toggle-icon::after {
@@ -744,7 +745,7 @@ input[type="checkbox"] {
         display: inline-flex;
     }
 
-    .nav--js .nav-toggle[aria-expanded="false"] ~ .nav-list {
+    .nav--js .nav-toggle[aria-expanded="false"]~.nav-list {
         display: none;
     }
 
@@ -764,4 +765,56 @@ input[type="checkbox"] {
         display: flex;
         width: 100%;
     }
+}
+
+.js-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-4);
+}
+
+.js-product-card {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.stock-badge {
+    display: inline-flex;
+    margin-block-start: var(--space-2);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.stock-badge.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.stock-badge.empty {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.price-old {
+    margin: var(--space-2) 0 0;
+    color: var(--color-muted);
+}
+
+.discount-tag {
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: var(--color-highlight-strong);
+    color: var(--color-primary-strong);
+}
+
+.js-product-card {
+    position: relative;
 }
