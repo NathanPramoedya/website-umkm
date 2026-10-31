@@ -1,85 +1,91 @@
 "use strict";
-
 console.log("P09 JavaScript aktif");
 
 const produkUmkm = [
-    { nama: "Kopi Saji Signature", kategori: "Kopi", harga: 45000, stok: 24, isUnggulan: true, diskonPersen: 10, deskripsi: "Bubuk 250 gram, blend robusta-arabika khas Batang." },
-    { nama: "Cold Brew Aren", kategori: "Kopi", harga: 20000, stok: 12, isUnggulan: false, diskonPersen: 0, deskripsi: "Botol 250 ml, diseduh dingin 12 jam." },
-    { nama: "Americano Peach", kategori: "Kopi", harga: 18000, stok: 3, isUnggulan: false, diskonPersen: 0, deskripsi: "Sachet drip 12 gram, nuansa peach segar." },
-    { nama: "Es Kopi Kelapa Muda", kategori: "Kopi", harga: 18000, stok: 0, isUnggulan: false, diskonPersen: 0, deskripsi: "Sachet drip 12 gram, dengan santan kelapa muda." },
-    { nama: "Paket Kantor Mingguan", kategori: "Bundling", harga: 95000, stok: 8, isUnggulan: true, diskonPersen: 15, deskripsi: "5 sachet drip @ 15 gram untuk seduh di kantor." },
-    { nama: "Paket Tester Pelanggan Baru", kategori: "Bundling", harga: 35000, stok: 5, isUnggulan: false, diskonPersen: 0, deskripsi: "3 sachet drip @ 10 gram untuk coba-coba." },
+    { id: "KS-01", nama: "Kopi Saji Signature", kategori: "Kopi", harga: 45000, stok: 24, unggulan: true, diskonPersen: 10, deskripsi: "Bubuk 250 gram, blend robusta-arabika khas Batang." },
+    { id: "KS-02", nama: "Cold Brew Aren", kategori: "Kopi", harga: 20000, stok: 12, unggulan: false, diskonPersen: 0, deskripsi: "Botol 250 ml, diseduh dingin 12 jam." },
+    { id: "KS-03", nama: "Americano Peach", kategori: "Kopi", harga: 18000, stok: 3, unggulan: false, diskonPersen: 0, deskripsi: "Sachet drip 12 gram, nuansa peach segar." },
+    { id: "KS-04", nama: "Es Kopi Kelapa Muda", kategori: "Kopi", harga: 18000, stok: 0, unggulan: false, diskonPersen: 0, deskripsi: "Sachet drip 12 gram, dengan santan kelapa muda." },
+    { id: "KS-05", nama: "Paket Kantor Mingguan", kategori: "Bundling", harga: 95000, stok: 8, unggulan: true, diskonPersen: 15, deskripsi: "5 sachet drip @ 15 gram untuk seduh di kantor." },
+    { id: "KS-06", nama: "Paket Tester Pelanggan Baru", kategori: "Bundling", harga: 35000, stok: 5, unggulan: false, diskonPersen: 0, deskripsi: "3 sachet drip @ 10 gram untuk coba-coba." },
 ];
 
-const formatRupiah = new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    maximumFractionDigits: 0,
-});
+function formatRupiah(nilai) {
+    const angka = Number(nilai);
+    if (!Number.isFinite(angka)) {
+        return "Rp 0";
+    }
+    return "Rp " + Math.round(angka).toLocaleString("id-ID");
+}
 
 function hitungHargaAkhir(harga, diskonPersen = 0) {
-    const persen = Number(diskonPersen);
-    if (!Number.isFinite(persen) || persen <= 0) {
-        return harga; // tidak ada diskon valid
-    }
-    const persenAman = Math.min(persen, 100);
-    return Math.round((harga * (100 - persenAman)) / 100);
+    return diskonPersen > 0 ? Math.round((harga * (100 - diskonPersen)) / 100) : harga;
 }
 
 function statusStok(stok) {
-    if (stok === 0) {
-        return { label: "Habis", className: "empty" };
-    } else if (stok <= 5) {
-        return { label: "Terbatas", className: "warning" };
-    } else {
-        return { label: "Tersedia", className: "" };
+    if (stok <= 0) {
+        return { label: "Habis", class: "empty" };
     }
+    if (stok <= 5) {
+        return { label: "Stok terbatas", class: "warning" };
+    }
+    return { label: "Tersedia", class: "tersedia" };
+}
+
+function buatKartuProduk(produk) {
+    const status = statusStok(produk.stok);
+    const hargaAkhir = hitungHargaAkhir(produk.harga, produk.diskonPersen);
+    const adaDiskon = hargaAkhir < produk.harga;
+
+    const blokHarga = adaDiskon
+        ? `<p class="price-old"><s>${formatRupiah(produk.harga)}</s> <span class="discount-tag">-${produk.diskonPersen}%</span></p>
+        <p class="price">${formatRupiah(hargaAkhir)}</p>`
+        : `<p class="price">${formatRupiah(produk.harga)}</p>`;
+
+    return `
+    <article class="js-product-card" data-id="${produk.id}">
+        <h3>${produk.nama}</h3>
+        <p class="category-note">${produk.kategori} &middot; ${produk.deskripsi}</p>
+        ${blokHarga}
+        <span class="stock-badge ${status.class}">${status.label}</span>
+    </article>`;
 }
 
 function renderProduk() {
     const grid = document.querySelector("#produk-dinamis");
     const ringkasan = document.querySelector("#produk-ringkasan");
-
-    if (!grid || !ringkasan) {
+    const unggulan = document.querySelector("#produk-unggulan");
+    if (!grid || !ringkasan || !unggulan) {
+        console.warn("Kontainer render tidak ditemukan, render dilewati.");
         return;
     }
 
     console.table(produkUmkm);
 
-    let jumlahTersedia = 0;
-    let markup = "";
+    const produkTersedia = produkUmkm.filter((produk) => produk.stok > 0);
+    console.log("Setelah filter stok > 0:", produkTersedia.length, "| array asli tetap:", produkUmkm.length);
 
+    const daftarKartu = produkTersedia.map((produk) => buatKartuProduk(produk));
+    console.log("Jumlah kartu HTML:", daftarKartu.length);
+
+    const produkUnggulan = produkUmkm.find((produk) => produk.unggulan === true);
+    console.log("Hasil find unggulan:", produkUnggulan);
+
+    const jumlahPerStatus = { "Tersedia": 0, "Stok terbatas": 0, "Habis": 0 };
     for (const produk of produkUmkm) {
         const status = statusStok(produk.stok);
-        const hargaAkhir = hitungHargaAkhir(produk.harga, produk.diskonPersen);
-        const adaDiskon = hargaAkhir < produk.harga;
-
-        if (produk.stok > 0) {
-            jumlahTersedia++;
-        }
-
-        const badgeUnggulan = produk.isUnggulan
-            ? '<span class="product-badge">Unggulan</span>'
-            : "";
-
-        const blokHarga = adaDiskon
-            ? `<p class="price-old"><s>${formatRupiah.format(produk.harga)}</s> <span class="discount-tag">-${produk.diskonPersen}%</span></p>
-            <p class="price">${formatRupiah.format(hargaAkhir)}</p>`
-            : `<p class="price">${formatRupiah.format(produk.harga)}</p>`;
-
-        markup += `
-    <article class="js-product-card">
-        ${badgeUnggulan}
-        <h3>${produk.nama}</h3>
-        <p>${produk.kategori} &middot; ${produk.deskripsi}</p>
-        ${blokHarga}
-        <span class="stock-badge ${status.className}">${status.label}${produk.stok > 0 ? ` (${produk.stok})` : ""}</span>
-        <p>${produk.stok > 0 ? "Siap dipesan" : "Hubungi admin"}</p>
-    </article>`;
+        jumlahPerStatus[status.label] += 1;
     }
+    console.table(jumlahPerStatus);
 
-    grid.innerHTML = markup;
-    ringkasan.textContent = `${jumlahTersedia} produk tersedia dari ${produkUmkm.length} data.`;
+    grid.innerHTML = daftarKartu.join("");
+    ringkasan.textContent = `${produkTersedia.length} produk tersedia dari ${produkUmkm.length} data.`;
+
+    if (produkUnggulan) {
+        unggulan.textContent = `Produk unggulan: ${produkUnggulan.nama}`;
+    } else {
+        unggulan.textContent = "Belum ada produk unggulan.";
+    }
 }
 
-renderProduk();
+document.addEventListener("DOMContentLoaded", renderProduk);
