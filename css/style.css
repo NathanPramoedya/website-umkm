@@ -135,6 +135,12 @@ a:hover {
     border-bottom: 0;
 }
 
+/* Aturan global p { max-width: 68ch } membuat teks footer rata tengah di dalam
+   kotak sempit yang menempel ke kiri; margin auto memusatkan kotaknya. */
+.site-footer p {
+    margin-inline: auto;
+}
+
 .nav,
 .page {
     width: min(100% - 2rem, 60rem);
@@ -822,4 +828,82 @@ input[type="checkbox"] {
 #produk-unggulan {
     font-weight: 700;
     color: var(--color-primary, #6f3b1f);
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-block: var(--space-3) var(--space-4);
+}
+
+.filter-button {
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.65rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    border-color: var(--color-primary);
+}
+
+.filter-button.is-active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: var(--space-3);
+    color: var(--color-muted);
+    background: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+/* ---------- P11: katalog produk interaktif ---------- */
+.produk-status {
+    font-weight: 700;
+    color: var(--color-primary-strong);
+}
+
+/* Kartu hasil render JS tidak memakai badge absolut, jadi padding atas disamakan */
+#produk-grid article.product-card {
+    padding-top: var(--space-card);
+}
+
+/* Sejajarkan isi kartu: deskripsi mengisi sisa ruang, sehingga harga, badge,
+   dan tombol selalu berada di posisi yang sama pada semua kartu satu baris */
+#produk-grid .category-note {
+    flex-grow: 1;
+}
+
+/* Baris harga coret punya tinggi tetap. Kartu tanpa diskon diberi jarak
+   setara (tinggi baris + gap) supaya harga akhir tetap sejajar */
+#produk-grid .price-old {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: 1.75rem;
+    margin: 0;
+}
+
+#produk-grid .category-note + .price {
+    margin-top: calc(1.75rem + var(--space-1));
+}
+
+#produk-grid .stock-badge {
+    align-self: flex-start;
+    margin-block-start: var(--space-2);
+}
+
+#produk-grid .ghost-button {
+    align-self: flex-start;
+    margin-top: var(--space-2);
 }
