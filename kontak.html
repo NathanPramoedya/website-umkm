@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/script.js" defer></script>
   <script src="js/form.js" defer></script>
+  <script src="js/newsletter.js" defer></script>
 </head>
 
 <body>
@@ -32,13 +33,13 @@
 
   <main id="konten" class="page" tabindex="-1">
     <section class="hero" aria-labelledby="kontak-hero-title">
-            <div class="hero-content">
-                <p class="eyebrow">Batang Coffee Heritage</p>
-                <h1 id="kontak-hero-title">Kontak Kopi Saji</h1>
-                <p>Silakan kirim pertanyaan tentang produk, stok produk, reservasi, kerja sama, atau aduan pelayanan. Tim Kopi Saji siap membantu kamu.</p>
-            </div>
-            <img class="hero-image" src="assets/images/saji_team_aduan.webp" width="640" height="360" fetchpriority="high" alt="Team kopi saji siap menerima seluruh pesan" />
-        </section>
+      <div class="hero-content">
+        <p class="eyebrow">Batang Coffee Heritage</p>
+        <h1 id="kontak-hero-title">Kontak Kopi Saji</h1>
+        <p>Silakan kirim pertanyaan tentang produk, stok produk, reservasi, kerja sama, atau aduan pelayanan. Tim Kopi Saji siap membantu kamu.</p>
+      </div>
+      <img class="hero-image" src="assets/images/saji_team_aduan.webp" width="640" height="360" fetchpriority="high" alt="Team kopi saji siap menerima seluruh pesan" />
+    </section>
 
     <section class="section" aria-labelledby="form-title">
       <div class="section-head">
@@ -47,124 +48,212 @@
       </div>
 
       <div class="contact-layout">
-      <form id="form-kontak" class="form-card" action="#" method="post" aria-labelledby="form-title">
-        <p class="form-note">Semua kolom wajib diisi, kecuali Nomor WhatsApp dan Waktu kontak.</p>
+        <form id="form-kontak" class="form-card" action="#" method="post" aria-labelledby="form-title" novalidate>
+          <p class="form-note">Semua kolom wajib diisi, kecuali Nomor WhatsApp dan Waktu kontak.</p>
 
-        <div class="field">
-          <label for="nama">Nama lengkap</label>
-          <input id="nama" name="nama" type="text" autocomplete="name" required minlength="3" />
-        </div>
+          <div class="field">
+            <label for="nama">Nama lengkap</label>
+            <input
+              id="nama"
+              name="nama"
+              type="text"
+              autocomplete="name"
+              required
+              minlength="3"
+              aria-describedby="nama-error"
+            />
+            <p id="nama-error" class="field-error" aria-live="polite"></p>
+          </div>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-error"
+            />
+            <p id="email-error" class="field-error" aria-live="polite"></p>
+          </div>
 
-        <div class="field">
-          <label for="telepon">Nomor WhatsApp</label>
-          <input id="telepon" name="telepon" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="telepon-help" />
-          <p id="telepon-help" class="help-text">Opsional. Isi jika ingin dihubungi lewat WhatsApp, contoh:
-            081234567890.</p>
-        </div>
+          <div class="field">
+            <label for="telepon">Nomor WhatsApp</label>
+            <input
+              id="telepon"
+              name="telepon"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              pattern="^(\+62|62|0)8[1-9][0-9]{6,10}$"
+              title="Nomor WhatsApp Indonesia, contoh: 081234567890"
+              aria-describedby="telepon-help telepon-error"
+            />
+            <p id="telepon-help" class="help-text">Opsional. Isi jika ingin dihubungi lewat WhatsApp, contoh: 081234567890.</p>
+            <p id="telepon-error" class="field-error" aria-live="polite"></p>
+          </div>
 
-        <div class="field">
-          <label for="paket">Pilih paket yang diminati / Keperluan lain</label>
-          <select id="paket" name="paket" required aria-describedby="paket-help">
-            <option value="">Pilih salah satu</option>
-            <option value="seduh-dimanapun">Paket Seduh Dimanapun</option>
-            <option value="reseller">Paket Reseller</option>
-            <option value="reservasi">Reservasi</option>
-            <option value="aduan-pelayanan">Aduan Pelayanan</option>
-            <option value="kerja-sama">Kerjasama</option>
-            <option value="lainnya">Lainnya</option>
-          </select>
-          <p id="paket-help" class="help-text">Jika mengajukan aduan pelayanan, tulis kronologi di "Pesan".</p>
-        </div>
+          <div class="field">
+            <label for="paket">Pilih paket yang diminati / Keperluan lain</label>
+            <select id="paket" name="paket" required aria-describedby="paket-help paket-error">
+              <option value="">Pilih salah satu</option>
+              <option value="seduh-dimanapun">Paket Seduh Dimanapun</option>
+              <option value="reseller">Paket Reseller</option>
+              <option value="reservasi">Reservasi</option>
+              <option value="aduan-pelayanan">Aduan Pelayanan</option>
+              <option value="kerja-sama">Kerjasama</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+            <p id="paket-help" class="help-text">Jika mengajukan aduan pelayanan, tulis kronologi di "Pesan".</p>
+            <p id="paket-error" class="field-error" aria-live="polite"></p>
+          </div>
 
-        <fieldset class="field-full">
-          <legend>Waktu kontak yang diinginkan</legend>
-          <div class="choice-group">
-            <div class="choice">
-              <input id="waktu-kapan-saja" name="waktu" type="radio" value="kapan-saja" checked />
-              <label for="waktu-kapan-saja">Kapan saja</label>
+          <fieldset class="field-full">
+            <legend>Waktu kontak yang diinginkan</legend>
+            <div class="choice-group">
+              <div class="choice">
+                <input id="waktu-kapan-saja" name="waktu" type="radio" value="kapan-saja" checked />
+                <label for="waktu-kapan-saja">Kapan saja</label>
+              </div>
+              <div class="choice">
+                <input id="waktu-pagi" name="waktu" type="radio" value="pagi" />
+                <label for="waktu-pagi">Pagi (10.00–12.00 WIB)</label>
+              </div>
+              <div class="choice">
+                <input id="waktu-siang" name="waktu" type="radio" value="siang" />
+                <label for="waktu-siang">Siang (12.00–15.00 WIB)</label>
+              </div>
+              <div class="choice">
+                <input id="waktu-sore" name="waktu" type="radio" value="sore" />
+                <label for="waktu-sore">Sore (15.00–18.00 WIB)</label>
+              </div>
+              <div class="choice">
+                <input id="waktu-malam" name="waktu" type="radio" value="malam" />
+                <label for="waktu-malam">Malam (18.00–21.00 WIB)</label>
+              </div>
             </div>
+          </fieldset>
+
+          <div class="field-full">
+            <fieldset aria-describedby="topik-error">
+              <legend>Topik pertanyaan</legend>
+              <div class="choice-group">
+                <div class="choice">
+                  <input id="topik-produk" name="topik" type="radio" value="produk" required />
+                  <label for="topik-produk">Informasi produk</label>
+                </div>
+                <div class="choice">
+                  <input id="topik-pesanan" name="topik" type="radio" value="pesanan" required />
+                  <label for="topik-pesanan">Status pesanan</label>
+                </div>
+                <div class="choice">
+                  <input id="topik-kerja-sama" name="topik" type="radio" value="kerja-sama" required />
+                  <label for="topik-kerja-sama">Kerja sama</label>
+                </div>
+                <div class="choice">
+                  <input id="topik-aduan-pelayanan" name="topik" type="radio" value="aduan-pelayanan" required />
+                  <label for="topik-aduan-pelayanan">Aduan pelayanan</label>
+                </div>
+              </div>
+            </fieldset>
+            <p id="topik-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field field-full">
+            <label for="pesan">Pesan</label>
+            <textarea
+              id="pesan"
+              name="pesan"
+              rows="5"
+              required
+              minlength="20"
+              aria-describedby="pesan-error"
+            ></textarea>
+            <p id="pesan-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field-full">
             <div class="choice">
-              <input id="waktu-pagi" name="waktu" type="radio" value="pagi" />
-              <label for="waktu-pagi">Pagi (10.00–12.00 WIB)</label>
+              <input
+                id="setuju"
+                name="setuju"
+                type="checkbox"
+                required
+                aria-describedby="setuju-error"
+              />
+              <label for="setuju">Saya setuju data dummy yang diisi boleh ditampilkan pada bagian preview.</label>
             </div>
-            <div class="choice">
-              <input id="waktu-siang" name="waktu" type="radio" value="siang" />
-              <label for="waktu-siang">Siang (12.00–15.00 WIB)</label>
-            </div>
-            <div class="choice">
-              <input id="waktu-sore" name="waktu" type="radio" value="sore" />
-              <label for="waktu-sore">Sore (15.00–18.00 WIB)</label>
-            </div>
-            <div class="choice">
-              <input id="waktu-malam" name="waktu" type="radio" value="malam" />
-              <label for="waktu-malam">Malam (18.00–21.00 WIB)</label>
+            <p id="setuju-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <p id="form-feedback" class="form-feedback field-full" role="status" aria-live="polite"></p>
+
+          <div class="form-actions field-full">
+            <button type="reset" class="button-secondary">Reset</button>
+            <button type="submit">Kirim Pesan</button>
+          </div>
+        </form>
+
+        <aside class="contact-side" aria-label="Info kontak dan preview data">
+          <div class="side-card">
+            <h3>Info Cepat</h3>
+            <dl class="side-list">
+              <div class="side-item">
+                <dt>Alamat Kedai</dt>
+                <dd>Jl. Veteran No. 12, Kabupaten Batang</dd>
+              </div>
+              <div class="side-item">
+                <dt>Jam Layanan</dt>
+                <dd>Setiap Hari (10.00–22.00 WIB)</dd>
+              </div>
+              <div class="side-item">
+                <dt>WhatsApp</dt>
+                <dd><a href="https://wa.me/6281584666845" target="_blank" rel="noopener noreferrer">Hubungi Kopi Saji Batang</a></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="side-card">
+            <h3 id="preview-title">Preview Data</h3>
+            <p id="status-form" class="status-msg status-success" role="status" hidden>✔ Berhasil: pesan kamu sudah terkirim.</p>
+            <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol "Kirim Pesan" diklik.</pre>
+          </div>
+
+          <div class="side-card">
+            <h3 id="preferensi-title">Preferensi Tersimpan</h3>
+            <p id="preferensi-status" class="help-text" role="status" aria-live="polite">Belum ada preferensi tersimpan.</p>
+            <p class="help-text">Hanya pilihan paket dan topik yang disimpan di browser ini. Nama, email, nomor, dan pesan tidak disimpan.</p>
+            <div class="pref-actions">
+              <button type="button" id="hapus-preferensi" class="button-secondary">Hapus Preferensi</button>
             </div>
           </div>
-        </fieldset>
 
-        <fieldset class="field-full">
-          <legend>Topik pertanyaan</legend>
-          <div class="choice-group">
-            <div class="choice">
-              <input id="topik-produk" name="topik" type="radio" value="produk" required />
-              <label for="topik-produk">Informasi produk</label>
-            </div>
-            <div class="choice">
-              <input id="topik-pesanan" name="topik" type="radio" value="pesanan" />
-              <label for="topik-pesanan">Status pesanan</label>
-            </div>
-            <div class="choice">
-              <input id="topik-kerja-sama" name="topik" type="radio" value="kerja-sama" />
-              <label for="topik-kerja-sama">Kerja sama</label>
-            </div>
-            <div class="choice">
-              <input id="topik-aduan-pelayanan" name="topik" type="radio" value="aduan-pelayanan" />
-              <label for="topik-aduan-pelayanan">Aduan pelayanan</label>
-            </div>
+          <div class="side-card">
+            <h3 id="newsletter-title">Newsletter Kopi Saji</h3>
+            <p class="help-text">Dapatkan info promo & menu musiman langsung di email kamu.</p>
+            <form id="form-newsletter" class="newsletter-form" action="#" method="post" aria-labelledby="newsletter-title" novalidate>
+              <div class="field">
+                <label for="newsletter-email">Alamat Email</label>
+                <input
+                  id="newsletter-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nama@email.com"
+                  required
+                  aria-describedby="newsletter-email-error"
+                />
+                <p id="newsletter-email-error" class="field-error" aria-live="polite"></p>
+              </div>
+              <p id="newsletter-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+              <div class="newsletter-actions">
+                <button type="submit">Langganan</button>
+                <button type="button" id="newsletter-unsubscribe" class="button-secondary" hidden>Berhenti</button>
+              </div>
+            </form>
           </div>
-        </fieldset>
-
-        <div class="field field-full">
-          <label for="pesan">Pesan</label>
-          <textarea id="pesan" name="pesan" rows="5" required minlength="10"></textarea>
-        </div>
-
-        <div class="form-actions field-full">
-          <button type="reset" class="button-secondary">Reset</button>
-          <button type="submit">Kirim Pesan</button>
-        </div>
-      </form>
-
-      <aside class="contact-side" aria-label="Info kontak dan preview data">
-        <div class="side-card">
-          <h3>Info Cepat</h3>
-          <dl class="side-list">
-            <div class="side-item">
-              <dt>Alamat Kedai</dt>
-              <dd>Jl. Veteran No. 12, Kabupaten Batang</dd>
-            </div>
-            <div class="side-item">
-              <dt>Jam Layanan</dt>
-              <dd>Setiap Hari (10.00–22.00 WIB)</dd>
-            </div>
-            <div class="side-item">
-              <dt>WhatsApp</dt>
-              <dd><a href="https://wa.me/6281584666845" target="_blank" rel="noopener noreferrer">Hubungi Kopi Saji Batang</a></dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="side-card">
-          <h3 id="preview-title">Preview Data</h3>
-          <p id="status-form" class="status-msg status-success" role="status" hidden>✔ Berhasil: pesan kamu sudah terkirim.</p>
-          <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol "Kirim Pesan" diklik.</pre>
-        </div>
-      </aside>
+        </aside>
       </div>
     </section>
   </main>
