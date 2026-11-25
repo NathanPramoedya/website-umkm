@@ -1,0 +1,62 @@
+[
+    {
+        "id": "KS-01",
+        "name": "Kopi Saji Signature",
+        "category": "Kopi",
+        "price": 45000,
+        "stock": 24,
+        "featured": true,
+        "discountPercent": 10,
+        "description": "Bubuk 250 gram, blend robusta-arabika khas Batang."
+    },
+    {
+        "id": "KS-02",
+        "name": "Cold Brew Aren",
+        "category": "Kopi",
+        "price": 20000,
+        "stock": 12,
+        "featured": false,
+        "discountPercent": 0,
+        "description": "Botol 250 ml, diseduh dingin 12 jam."
+    },
+    {
+        "id": "KS-03",
+        "name": "Americano Peach",
+        "category": "Kopi",
+        "price": 18000,
+        "stock": 3,
+        "featured": false,
+        "discountPercent": 0,
+        "description": "Sachet drip 12 gram, nuansa peach segar."
+    },
+    {
+        "id": "KS-04",
+        "name": "Es Kopi Kelapa Muda",
+        "category": "Kopi",
+        "price": 18000,
+        "stock": 0,
+        "featured": false,
+        "discountPercent": 0,
+        "description": "Sachet drip 12 gram, dengan santan kelapa muda."
+    },
+    {
+        "id": "KS-05",
+        "name": "Paket Kantor Mingguan",
+        "category": "Bundling",
+        "price": 95000,
+        "stock": 8,
+        "featured": true,
+        "discountPercent": 15,
+        "description": "5 sachet drip @ 15 gram untuk seduh di kantor."
+    },
+    {
+        "id": "KS-06",
+        "name": "Paket Tester Pelanggan Baru",
+        "category": "Bundling",
+        "price": 35000,
+        "stock": 5,
+        "featured": false,
+        "discountPercent": 0,
+        "description": "3 sachet drip @ 10 gram untuk coba-coba."
+    }
+]

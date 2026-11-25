@@ -281,7 +281,6 @@ button.button-secondary:hover {
 .value-item,
 .contact-card,
 .aside-note,
-.price-table-wrap,
 .table-scroll {
     padding: var(--space-card);
     background: var(--color-surface);
@@ -350,20 +349,6 @@ article.product-card {
     border-radius: var(--radius-lg);
 }
 
-.card-actions a:not(.button) {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--tap-size);
-}
-
-.card-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    align-items: center;
-    margin-top: auto;
-}
-
 .hero {
     display: grid;
     grid-template-columns: 1fr;
@@ -428,10 +413,6 @@ article.product-card {
 .aside-note {
     margin-top: var(--space-section);
     background: var(--color-highlight);
-}
-
-.category-list {
-    padding-left: var(--space-4);
 }
 
 .table-scroll {
@@ -781,13 +762,6 @@ input[type="checkbox"] {
     gap: var(--space-4);
 }
 
-.js-product-card {
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface);
-}
-
 .stock-badge {
     display: inline-flex;
     margin-block-start: var(--space-2);
@@ -807,24 +781,6 @@ input[type="checkbox"] {
 .stock-badge.empty {
     background: #fee2e2;
     color: #991b1b;
-}
-
-.price-old {
-    margin: var(--space-2) 0 0;
-    color: var(--color-muted);
-}
-
-.discount-tag {
-    padding: 0.1rem 0.45rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    background: var(--color-highlight-strong);
-    color: var(--color-primary-strong);
-}
-
-.js-product-card {
-    position: relative;
 }
 
 #produk-unggulan {
@@ -874,34 +830,13 @@ input[type="checkbox"] {
     color: var(--color-primary-strong);
 }
 
-#produk-grid article.product-card {
-    padding-top: var(--space-card);
-}
-
-#produk-grid .category-note {
+#produk-dinamis .category-note {
     flex-grow: 1;
 }
 
-#produk-grid .price-old {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    min-height: 1.75rem;
-    margin: 0;
-}
-
-#produk-grid .category-note + .price {
-    margin-top: calc(1.75rem + var(--space-1));
-}
-
-#produk-grid .stock-badge {
+#produk-dinamis .stock-badge {
     align-self: flex-start;
     margin-block-start: var(--space-2);
-}
-
-#produk-grid .ghost-button {
-    align-self: flex-start;
-    margin-top: var(--space-2);
 }
 
 /* ===== P12: validasi form, status, preferensi, newsletter ===== */
@@ -992,4 +927,53 @@ button[hidden] {
     .form-actions {
         justify-content: stretch;
     }
+}
+
+/* ===== P13: state katalog (loading / success / empty / error) ===== */
+.catalog-status {
+    padding: var(--space-2) var(--space-3);
+    border-left: 0.25rem solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-soft);
+}
+
+.catalog-status.loading {
+    color: var(--color-primary-strong);
+    background: var(--color-highlight);
+    border-left-color: var(--color-highlight-strong);
+}
+
+.catalog-status.success {
+    color: var(--color-success);
+    background: var(--color-success-bg);
+    border-left-color: var(--color-success);
+}
+
+.catalog-status.empty {
+    color: var(--color-primary-strong);
+    background: var(--color-surface-soft);
+    border-left-color: var(--color-primary);
+}
+
+.catalog-status.error {
+    color: var(--color-error);
+    background: var(--color-error-bg);
+    border-left-color: var(--color-error);
+}
+
+/* ===== P13: harga diskon ===== */
+.price-old {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-muted);
+}
+
+.discount-tag {
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: var(--color-highlight-strong);
+    color: var(--color-primary-strong);
 }

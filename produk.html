@@ -7,7 +7,7 @@
     <title>Produk Kopi Saji - Website UMKM</title>
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/app.js" defer></script>
+    <script type="module" src="js/catalog-api.js"></script>
     <script src="js/script.js" defer></script>
 </head>
 
@@ -88,7 +88,9 @@
         <section class="section" aria-labelledby="produk-title">
             <div class="section-head">
                 <h2 id="produk-title">Produk Kemasan</h2>
-                <p id="produk-status" class="produk-status" role="status" aria-live="polite">Produk belum dimuat.</p>
+                <p id="catalog-status" class="catalog-status produk-status" role="status" aria-live="polite">Produk belum dimuat.</p>
+                <p id="produk-ringkasan">Menunggu data produk.</p>
+                <p id="produk-unggulan">Produk unggulan akan muncul setelah data dimuat.</p>
             </div>
 
             <div class="filter-bar" role="group" aria-label="Filter kategori produk">
@@ -98,7 +100,7 @@
                 <button type="button" class="filter-button" data-filter="Makanan" aria-pressed="false">Makanan</button>
             </div>
 
-            <div id="produk-grid" class="product-grid"></div>
+            <div id="produk-dinamis" class="product-grid js-product-grid"></div>
         </section>
     </main>
 
